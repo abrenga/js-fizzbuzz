@@ -35,23 +35,22 @@ for (let i = 1; i <= n; i++) {
 }
 */
 let n = 100;
-let array = [];
+
 
 
 function ciClaNumeri() {
     for (let i = 1; i <= n; i++) {
-        let numeri = fizzbuzz(i);
-        array.push(numeri);
+         fizzbuzz(i);
     }
-    return array;
+    
 }
 
 function fizzbuzz(i) {
     let numdicinque = i % 5;
     let numditre = i % 3;
     if (numditre == 0 && numdicinque == 0) {
-        console.log("Buzz");
-        return creaHTML("FIZZBUZZ");
+        console.log("FIZZBUZZ");
+        creaHTML("FIZZBUZZ");
 
 
     } else if (numdicinque == 0) {
