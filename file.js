@@ -36,49 +36,43 @@ for (let i = 1; i <= n; i++) {
 */
 let n = 100;
 
-
-
 function ciClaNumeri() {
     for (let i = 1; i <= n; i++) {
-         fizzbuzz(i);
+        fizzbuzz(i);
     }
-    
+
 }
 
 function fizzbuzz(i) {
     let numdicinque = i % 5;
     let numditre = i % 3;
     if (numditre == 0 && numdicinque == 0) {
-        console.log("FIZZBUZZ");
-        creaHTML("FIZZBUZZ");
 
+        creaHTML("FIZZBUZZ", "bg-body-secondary", "redTex");
 
     } else if (numdicinque == 0) {
-        console.log("Buzz");
-        creaHTML("Buzz");
 
+        creaHTML("Buzz", "bg-body-secondary","buzzTellow");
 
     } else if (numditre == 0) {
-        console.log("Fizz");
-        creaHTML("Fizz");
 
-
+        creaHTML("Fizz", "bg-body-secondary","fizzBlu");
     } else {
-        console.log(i);
+
         creaHTML(i);
-
     }
-
 }
 
-function creaHTML(fizzbuzz) {
-    let oi = document.getElementById("num");
-    oi.innerHTML += `<p> ${fizzbuzz} </p>`;
+function creaHTML(fizzbuzz, classUno, classDue) {
+    let divFather = document.getElementById("num");
+    let divChildS = document.createElement("div");
+    divFather.appendChild(divChildS);
+    divChildS.classList.add(classUno, classDue);
+    divChildS.textContent = fizzbuzz;
+    return divChildS;
+    /*divFatheri.innerHTML += `<div > ${fizzbuzz} </div>`;
+    return divFatheri.innerHTML;*/
 }
-
-
-
-
 
 ciClaNumeri()
 
